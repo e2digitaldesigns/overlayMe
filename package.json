@@ -1,6 +1,6 @@
 {
   "name": "overlayme",
-  "version": "1.2.35",
+  "version": "1.2.40",
   "author": "C. Eugene Bey",
   "description": "stuff",
   "private": true,
@@ -44,7 +44,10 @@
         "provider": "github",
         "releaseType": "draft"
       }
-    ]
+    ],
+    "Linux": {
+      "target": "AppImage"
+    }
   },
   "scripts": {
     "build": "react-scripts build",
@@ -87,5 +90,8 @@
     "cross-env": "^7.0.3",
     "electron": "^23.1.1",
     "electron-builder": "^23.6.0"
+  },
+  "Linux": {
+    "target": "AppImage"
   }
 }
