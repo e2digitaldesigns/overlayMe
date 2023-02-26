@@ -1,6 +1,6 @@
 {
   "name": "overlayme",
-  "version": "0.1.11",
+  "version": "0.1.12",
   "author": "C. Eugene Bey",
   "description": "stuff",
   "private": true,
@@ -78,6 +78,7 @@
     ]
   },
   "devDependencies": {
+    "@electron-forge/publisher-github": "^6.0.5",
     "@types/lodash": "^4.14.191",
     "@types/react-router": "^5.1.20",
     "@types/react-router-dom": "^5.3.3",
@@ -87,5 +88,20 @@
     "cross-env": "^7.0.3",
     "electron": "^23.1.1",
     "electron-builder": "^23.6.0"
+  },
+  "config": {
+    "forge": {
+      "publishers": [
+        {
+          "name": "@electron-forge/publisher-github",
+          "config": {
+            "repository": {
+              "owner": "erikhofer",
+              "name": "electron-publish-example"
+            }
+          }
+        }
+      ]
+    }
   }
 }
