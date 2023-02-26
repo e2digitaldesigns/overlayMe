@@ -1,6 +1,6 @@
 {
   "name": "overlayme",
-  "version": "1.2.3",
+  "version": "1.2.31",
   "author": "C. Eugene Bey",
   "description": "stuff",
   "private": true,
@@ -78,7 +78,6 @@
     ]
   },
   "devDependencies": {
-    "@electron-forge/publisher-github": "^6.0.5",
     "@types/lodash": "^4.14.191",
     "@types/react-router": "^5.1.20",
     "@types/react-router-dom": "^5.3.3",
