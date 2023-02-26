@@ -1,0 +1,106 @@
+[
+  {
+    "_id": "pti",
+    "name": "PTI: Pardon the Interruption",
+    "maxHosts": 3,
+    "tickerType": "simple",
+    "topicType": "advanced",
+    "hasSponsor": false,
+    "hasContentBox": false,
+    "images": {
+      "contentBox": { "amount": 0, "width": 200, "height": 200 },
+      "logo": { "amount": 1, "width": 400, "height": 220 },
+      "sponsor": { "amount": 0, "width": 400, "height": 120 },
+      "topic": { "amount": 0, "width": 400, "height": 220 }
+    },
+    "url": "http://localhost:9899/overlays",
+    "localDir": "PTI",
+    "linkArray": [
+      { "name": "Chyron", "param": "chyron" },
+      { "name": "Topic Description", "param": "description" },
+      { "name": "Header", "param": "header" },
+      { "name": "Logo", "param": "logo" },
+      { "name": "Sponsors", "param": "sponsors" },
+      { "name": "Topics", "param": "topics" },
+
+      { "name": "Host 2 Divider", "param": "Host_2_Divider" },
+      { "name": "Host 3 Divider", "param": "Host_3_Divider" },
+
+      { "name": "Label 1 Host 1", "param": "Label_1_Host_1" },
+      { "name": "Label 1 Host 2", "param": "Label_1_Host_2" },
+      { "name": "Label 1 Host 3", "param": "Label_1_Host_3" },
+
+      { "name": "Label 2 Host 2", "param": "Label_2_Host_2" },
+      { "name": "Label 2 Host 3", "param": "Label_2_Host_3" },
+
+      { "name": "Label 3 Host 2", "param": "Label_3_Host_2" },
+      { "name": "Label 3 Host 3", "param": "Label_3_Host_3" }
+    ]
+  },
+  {
+    "_id": "cnn",
+    "name": "CNN: Cable News Network",
+    "maxHosts": 3,
+    "tickerType": "advanced",
+    "topicType": "single",
+    "hasSponsor": false,
+    "hasContentBox": true,
+    "images": {
+      "contentBox": { "amount": 3, "width": 340, "height": 200 },
+      "logo": { "amount": 1, "width": 185, "height": 95 },
+      "sponsors": { "amount": 0, "width": 0, "height": 0 },
+      "topic": { "amount": 0, "width": 230, "height": 135 }
+    },
+    "url": "http://localhost:9899/overlays",
+    "localDir": "CNN",
+    "linkArray": [
+      { "name": "Header", "param": "header" },
+      { "name": "Chyron", "param": "chyron" }
+    ]
+  },
+  {
+    "_id": "bnn",
+    "name": "BNN: Black News Network",
+    "maxHosts": 3,
+    "tickerType": "advanced",
+    "topicType": "advanced",
+    "hasSponsor": true,
+    "hasContentBox": false,
+    "images": {
+      "contentBox": { "amount": 0, "width": 200, "height": 200 },
+      "logo": { "amount": 1, "width": 230, "height": 135 },
+      "sponsors": { "amount": 0, "width": 0, "height": 0 },
+      "topic": { "amount": 0, "width": 230, "height": 135 }
+    },
+    "url": "http://localhost:9899/overlays",
+    "localDir": "BNN",
+    "linkArray": [
+      { "name": "Header", "param": "header" },
+      { "name": "Chyron", "param": "chyron" },
+      { "name": "2 Up Host, Host 1", "param": "host_2_1" },
+      { "name": "2 Up Host, Host 2", "param": "host_2_2" },
+      { "name": "2 Up Video w/Host (host)", "param": "video_2_host" },
+      { "name": "2 Up Video w/Host (video)", "param": "video_2_video" },
+      { "name": "3 Up Video w/2Host (host 1)", "param": "video_3_host_1" },
+      { "name": "3 Up Video w/2Host (host 2)", "param": "video_3_host_2" },
+      { "name": "3 Up Video w/2Host (video)", "param": "video_3_video" }
+    ]
+  },
+
+  {
+    "_id": "wm",
+    "name": "WM: Watch Mojo",
+    "maxHosts": 1,
+    "tickerType": "simple",
+    "topicType": "multi",
+    "hasSponsor": false,
+    "hasContentBox": false,
+    "images": {
+      "contentBox": { "amount": 3, "width": 200, "height": 200 },
+      "logo": { "amount": 1, "width": 200, "height": 200 },
+      "sponsors": { "amount": 5, "width": 120, "height": 10 },
+      "topic": { "amount": 0, "width": 190, "height": 190 }
+    },
+    "linkArray": []
+  }
+]
