@@ -1,6 +1,6 @@
 {
   "name": "overlayme",
-  "version": "0.1.12",
+  "version": "1.2.3",
   "author": "C. Eugene Bey",
   "description": "stuff",
   "private": true,
@@ -88,20 +88,5 @@
     "cross-env": "^7.0.3",
     "electron": "^23.1.1",
     "electron-builder": "^23.6.0"
-  },
-  "config": {
-    "forge": {
-      "publishers": [
-        {
-          "name": "@electron-forge/publisher-github",
-          "config": {
-            "repository": {
-              "owner": "erikhofer",
-              "name": "electron-publish-example"
-            }
-          }
-        }
-      ]
-    }
   }
 }
