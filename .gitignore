@@ -10,6 +10,8 @@
 
 # production
 /build
+/electron/build
+/electron/server/routes/fileUpload/codes.js
 
 # misc
 .DS_Store

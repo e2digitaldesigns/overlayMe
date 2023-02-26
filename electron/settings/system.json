@@ -1,0 +1,26 @@
+{
+  "APPLICATION": {
+    "NAME": "Overlay Server",
+    "SIZE": { "WIDTH": 800, "HEIGHT": 600 },
+    "COLORS": { "BG": "#1e1e1e" },
+    "DATABASE": "overlayDb.db",
+    "DATABASES": {
+      "EPISODES": "overlay_episodes.db",
+      "HOSTS": "overlay_hosts.db",
+      "SOCIALS": "overlay_socials.db"
+    }
+  },
+  "DEFAULT_PORT": "9899",
+  "LOAD_URL": {
+    "BUILD": "/build/index.html",
+    "LOCAL": "http://localhost:9999"
+  },
+  "SPLASH_PAGE": "splashPage/index.html",
+  "LOGOS": {
+    "SMALL": "/images/logo-128x128.png"
+  },
+  "SCRIPTS": { "PRELOAD": "/preload.js" },
+  "TRAY": {
+    "TOOLTIP": "none"
+  }
+}

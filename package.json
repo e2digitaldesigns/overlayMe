@@ -1,7 +1,10 @@
 {
-  "name": "overlaykings",
+  "name": "overlayme",
   "version": "0.1.0",
+  "author": "C. Eugene Bey",
+  "description": "stuff",
   "private": true,
+  "main": "./electron/main.ts",
   "dependencies": {
     "@testing-library/jest-dom": "^5.16.5",
     "@testing-library/react": "^13.4.0",
@@ -10,17 +13,51 @@
     "@types/node": "^16.18.12",
     "@types/react": "^18.0.28",
     "@types/react-dom": "^18.0.11",
+    "aws-sdk": "^2.1322.0",
+    "electron-json-storage": "^4.6.0",
+    "ip": "^1.1.8",
+    "lodash": "^4.17.21",
+    "moment": "^2.29.4",
+    "multer": "^1.4.5-lts.1",
+    "nedb": "^1.8.0",
     "react": "^18.2.0",
     "react-dom": "^18.2.0",
+    "react-dropzone": "^14.2.3",
     "react-scripts": "5.0.1",
+    "sharp": "^0.31.3",
+    "socket.io": "^4.5.3",
+    "styled-components": "^5.3.6",
     "typescript": "^4.9.5",
+    "update-electron-app": "^2.0.1",
+    "uuid": "^9.0.0",
     "web-vitals": "^2.1.4"
   },
+  "build": {
+    "asar": true,
+    "extends": null,
+    "appId": "com.macrodeck",
+    "mac": {
+      "category": "your.app.category.type"
+    },
+    "publish": [
+      {
+        "provider": "github",
+        "releaseType": "draft"
+      }
+    ]
+  },
   "scripts": {
-    "start": "react-scripts start",
     "build": "react-scripts build",
-    "test": "react-scripts test",
-    "eject": "react-scripts eject"
+    "dev": "cross-env APP_DEV=true electron . ",
+    "dist": "electron-builder",
+    "eject": "react-scripts eject",
+    "pack": "cross-env APP_DEV=false electron-builder --dir",
+    "postbuild": "cpx build/** electron/build",
+    "postinstall": "electron-builder install-app-deps",
+    "rebuild": "npm rebuild --runtime=electron --target=18.2.0 --disturl=https://atom.io/download/atom-shell --force-abi=101",
+    "rebuilder": ".\\node_modules\\.bin\\electron-rebuild.cmd",
+    "start": "react-scripts start",
+    "test": "react-scripts test"
   },
   "eslintConfig": {
     "extends": [
@@ -39,5 +76,16 @@
       "last 1 firefox version",
       "last 1 safari version"
     ]
+  },
+  "devDependencies": {
+    "@types/lodash": "^4.14.191",
+    "@types/react-router": "^5.1.20",
+    "@types/react-router-dom": "^5.3.3",
+    "@types/styled-components": "^5.1.26",
+    "@types/uuid": "^9.0.1",
+    "cpx": "^1.5.0",
+    "cross-env": "^7.0.3",
+    "electron": "^23.1.1",
+    "electron-builder": "^23.6.0"
   }
 }
