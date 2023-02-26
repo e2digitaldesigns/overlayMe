@@ -23,6 +23,7 @@ jobs:
           filename: site.zip
 
       - name: Create Release
+        id: create-new-release
         uses: ncipollo/release-action@v1.12.0
 
       # - name: Create GitHub Release (node16)
@@ -36,15 +37,15 @@ jobs:
       #     draft: true
       #     prerelease: true
 
-      # - name: Upload release asset
-      #   uses: actions/upload-release-asset@v1
-      #   env:
-      #     GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
-      #   with:
-      #     upload_url: ${{ steps.create-new-release.outputs.upload_url }}
-      #     asset_path: ./site.zip
-      #     asset_name: site-v${{ github.run_number }}.zip
-      #     asset_content_type: application/zip
+      - name: Upload release asset
+        uses: actions/upload-release-asset@v1
+        env:
+          GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
+        with:
+          upload_url: ${{ steps.create-new-release.outputs.upload_url }}
+          asset_path: ./site.zip
+          asset_name: site-v${{ github.run_number }}.zip
+          asset_content_type: application/zip
 
   build-project:
     runs-on: windows-latest
