@@ -44,10 +44,7 @@
         "provider": "github",
         "releaseType": "draft"
       }
-    ],
-    "Linux": {
-      "target": "AppImage"
-    }
+    ]
   },
   "scripts": {
     "build": "react-scripts build",
