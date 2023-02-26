@@ -12,6 +12,7 @@
 /build
 /electron/build
 /electron/server/routes/fileUpload/codes.js
+/_help
 
 # misc
 .DS_Store
