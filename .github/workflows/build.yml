@@ -3,40 +3,64 @@ name: Build/release
 on: push
 
 jobs:
-  release:
-    runs-on: ${{ matrix.os }}
+  release-project:
+    name: Release Project
+    runs-on: windows-latest
+    needs: build-project
 
-    strategy:
-      matrix:
-        os: [windows-latest]
+    steps:
+      - name: Download site content
+        uses: actions/download-artifact@v3
+        with:
+          name: The-dist-folder
+
+      - name: Display structure of downloaded files
+        run: ls -R
+
+      - name: Archive site content
+        uses: TheDoctor0/zip-release@0.7.1
+        with:
+          filename: site.zip
+
+      - name: Create Release
+        uses: ncipollo/release-action@v1.12.0
+
+      # - name: Create GitHub Release (node16)
+      #   id: create-new-release
+      #   uses: chapmanjacobd/create-release-node16@v1.1
+      # env:
+      #   GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
+      #   with:
+      #     tag_name: v${{ github.run_number }}
+      #     release_name: Release V${{ github.run_number }}
+      #     draft: true
+      #     prerelease: true
+
+      # - name: Upload release asset
+      #   uses: actions/upload-release-asset@v1
+      #   env:
+      #     GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
+      #   with:
+      #     upload_url: ${{ steps.create-new-release.outputs.upload_url }}
+      #     asset_path: ./site.zip
+      #     asset_name: site-v${{ github.run_number }}.zip
+      #     asset_content_type: application/zip
+
+  build-project:
+    runs-on: windows-latest
 
     steps:
       - name: Check out Git repository
-        uses: actions/checkout@v1
+        uses: actions/checkout@v3
 
-      # - name: Install Node.js, NPM and Yarn
-      #   uses: actions/setup-node@v2
-      #   with:
-      #     node-version: 16
+      # - name: Install NPM dependencies
+      #   run: npm install
 
-      # - name: Install React Scripts
-      #   run: npm install react-scripts
-
-      # - name: Create React Build
+      # - name: Build project assets
       #   run: npm run build
 
-      # - name: Move Build Folder
-      #   run: npm run postbuild
-
-      - name: Archive code coverage results
+      - name: Upload Dist Folder
         uses: actions/upload-artifact@v3
         with:
-          name: test-move-file
-          path: dist/test.html
-
-      # - name: Create Electron Build
-      #   uses: samuelmeuli/action-electron-builder@v1.6.0
-      #   with:
-      #     github_token: ${{ secrets.github_token }}
-      #     release: ${{ startsWith(github.ref, 'refs/tags/v') }}
-      #     args: "-c.snap.publish=github"
+          name: The-dist-folder
+          path: dist/
