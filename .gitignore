@@ -9,8 +9,8 @@
 /coverage
 
 # production
-# /build
-# /electron/build
+/build
+/electron/build
 /electron/server/routes/fileUpload/codes.js
 /_help
 

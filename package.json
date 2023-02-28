@@ -4,7 +4,8 @@
   "author": "C. Eugene Bey",
   "description": "stuff",
   "private": true,
-  "main": "./electron/main.ts",
+  "main": "./electron/main.js",
+  "homepage": "./",
   "dependencies": {
     "@testing-library/jest-dom": "^5.16.5",
     "@testing-library/react": "^13.4.0",
@@ -36,6 +37,17 @@
     "asar": true,
     "extends": null,
     "appId": "com.macrodeck",
+    "win": {
+      "target": [
+        {
+          "target": "nsis",
+          "arch": [
+            "x64",
+            "ia32"
+          ]
+        }
+      ]
+    },
     "mac": {
       "category": "your.app.category.type"
     },
@@ -57,7 +69,8 @@
     "rebuild": "npm rebuild --runtime=electron --target=18.2.0 --disturl=https://atom.io/download/atom-shell --force-abi=101",
     "rebuilder": ".\\node_modules\\.bin\\electron-rebuild.cmd",
     "start": "react-scripts start",
-    "test": "react-scripts test"
+    "test": "react-scripts test",
+    "cover": "npm run test -- --coverage"
   },
   "eslintConfig": {
     "extends": [
@@ -87,8 +100,5 @@
     "cross-env": "^7.0.3",
     "electron": "^23.1.1",
     "electron-builder": "^23.6.0"
-  },
-  "Linux": {
-    "target": "AppImage"
   }
 }

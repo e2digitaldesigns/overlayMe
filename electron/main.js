@@ -2,7 +2,7 @@ const electron = require("electron");
 const server = require("./server/server");
 const storage = require("electron-json-storage");
 
-require("update-electron-app")();
+// require("update-electron-app")();
 
 const SETTINGS = require("./settings/system.json");
 
